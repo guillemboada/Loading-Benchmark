@@ -117,7 +117,7 @@ def structure_data_in_subdirectories(path):
     if (get_size_in_megabytes(subdirectory_images_path) > 700) and (get_size_in_megabytes(subdirectory_masks_path) > 20):
         print(f"Data is already in paths: ..\{os.path.basename(directory_images_path)}, ..\{os.path.basename(directory_masks_path)}")
     else:
-        print("Downloading data...")
+        print("Structuring data in subdirectories...")
         start = time()
         for directory in directories:
             if not os.path.exists(directory):
