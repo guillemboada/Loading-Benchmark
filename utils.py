@@ -19,17 +19,6 @@ HEIGHT = int(config['DEFAULT']['height'])
 WIDTH = int(config['DEFAULT']['width'])
 
 
-def get_size_in_megabytes(path):
-    total_size = 0
-    for dirpath, dirnames, filenames in os.walk(path):
-        for f in filenames:
-            fp = os.path.join(dirpath, f)
-            # skip if it is symbolic link
-            if not os.path.islink(fp):
-                total_size += os.path.getsize(fp)
-
-    return total_size / 10**6
-
 def get_data_paths(path):
     images_paths = glob(os.path.join(path, "images/*"))
     masks_paths = glob(os.path.join(path, "masks/*"))
@@ -41,7 +30,7 @@ def download_data(data_path):
     images_path = os.path.join(data_path, "images")
     masks_path = os.path.join(data_path, "masks")
 
-    if (get_size_in_megabytes(images_path) > 700) and (get_size_in_megabytes(masks_path) > 20):
+    if os.path.isdir(images_path) and os.path.isdir(masks_path):
         print(f"Data is already in indicated path: ..\{os.path.basename(data_path)}")
     else:
         print("Downloading data...")
@@ -114,7 +103,7 @@ def structure_data_in_subdirectories(path):
     subdirectory_images_path = os.path.join(path, "directory_images", "subdirectory_images")
     subdirectory_masks_path = os.path.join(path, "directory_masks", "subdirectory_masks")
     directories = [directory_images_path, directory_masks_path, subdirectory_images_path, subdirectory_masks_path]
-    if (get_size_in_megabytes(subdirectory_images_path) > 700) and (get_size_in_megabytes(subdirectory_masks_path) > 20):
+    if os.path.isdir(subdirectory_images_path) and os.path.isdir(subdirectory_masks_path):
         print(f"Data is already in paths: ..\{os.path.basename(directory_images_path)}, ..\{os.path.basename(directory_masks_path)}")
     else:
         print("Structuring data in subdirectories...")
