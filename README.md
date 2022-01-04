@@ -6,7 +6,7 @@ While it is possible to input your data to fit a model using a custom _generator
 * **c)** Using `.flow_from_directory()`
 * **d)** Using `.tfrecords`
 
-These are benchmarked on a segmentation task in `DatasetLoadingBenchmark.ipynb`.
+These are benchmarked on a segmentation task in `LoadingBenchmark.ipynb`.
 
 <p align="center">
   <img src="https://github.com/guillemboada/Loading-Benchmark/blob/main/TrainingTimes.png" alt="TrainingTimes" width="700"/>
