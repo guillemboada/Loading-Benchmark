@@ -7,7 +7,10 @@ While it is possible to input your data to fit a model using a custom _generator
 * **d)** Using `.tfrecords`
 
 These are benchmarked on a segmentation task in `DatasetLoadingBenchmark.ipynb`.
-![TrainingTimes](https://github.com/guillemboada/Loading-Benchmark/blob/main/TrainingTimes.png)
+
+<p align="center">
+  <img src="https://github.com/guillemboada/Loading-Benchmark/blob/main/TrainingTimes.png" alt="TrainingTimes" width="700"/>
+</p>
 
 ## References
 To execute the benchmarking on your machine, you will need to:
