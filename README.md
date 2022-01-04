@@ -8,7 +8,7 @@ While it is possible to input your data to fit a model using a custom _generator
 
 These are benchmarked on a segmentation task in `DatasetLoadingBenchmark.ipynb`.
 
-<img src="https://github.com/guillemboada/Loading-Benchmark/blob/main/TrainingTimes.png" alt="TrainingTimes" width="1000"/>
+<img src="https://github.com/guillemboada/Loading-Benchmark/blob/main/TrainingTimes.png" alt="TrainingTimes" width="600"/>
 
 ## References
 To execute the benchmarking on your machine, you will need to:
