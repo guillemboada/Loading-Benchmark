@@ -1,4 +1,8 @@
-""" This file contains the definition of a segmentation network """
+""" 
+This file contains the definition of a segmentation network 
+Reference: "Image Segmentation TensorFlow tutorial" (https://www.tensorflow.org/tutorials/images/segmentation)
+"""
+
 import tensorflow as tf
 from tensorflow_examples.models.pix2pix import pix2pix
 from segmentation_models.losses import binary_focal_loss

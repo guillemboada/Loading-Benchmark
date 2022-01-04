@@ -1,4 +1,7 @@
-# Reference: https://www.youtube.com/watch?v=C5CbsTDwQM0
+""" 
+This file contains the methods to create a TensorFlow dataset using .from_tensor_slices()
+Reference: "TensorFlow Dataset Pipeline for Semantic Segmentation using tf.data API", by Idiot Developer (https://www.youtube.com/watch?v=C5CbsTDwQM0)
+"""
 
 import os
 from glob import glob

@@ -1,3 +1,9 @@
+
+""" 
+This file contains the methods to use TFRECORDS files to create a TensorFlow dataset
+Reference: "A hands-on guide to TFRecords", by Pascal Janetzky (https://towardsdatascience.com/a-practical-guide-to-tfrecords-584536bc786c)
+"""
+
 import os
 from glob import glob
 import tensorflow as tf
