@@ -9,7 +9,7 @@ While it is possible to input your data to fit a model using a custom _generator
 These are benchmarked on a segmentation task in `LoadingBenchmark.ipynb`.
 
 <p align="center">
-  <img src="https://github.com/guillemboada/Loading-Benchmark/blob/main/TrainingTimes.png" alt="TrainingTimes" width="700"/>
+  <img src="https://github.com/guillemboada/Loading-Benchmark/blob/main/TrainingTimes.png" alt="TrainingTimes" width="800"/>
 </p>
 
 ## References
