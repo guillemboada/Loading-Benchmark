@@ -1,3 +1,7 @@
+""" 
+This file contains the methods to create a TensorFlow dataset using .from_generator()
+"""
+
 import os
 from glob import glob
 from tqdm import tqdm

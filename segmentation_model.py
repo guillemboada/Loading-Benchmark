@@ -5,12 +5,6 @@ Reference: "Image Segmentation TensorFlow tutorial" (https://www.tensorflow.org/
 
 import tensorflow as tf
 from tensorflow_examples.models.pix2pix import pix2pix
-from segmentation_models.losses import binary_focal_loss
-from segmentation_models.metrics import iou_score, f1_score, precision, recall
-from tensorflow.python.keras.layers import Input, Conv2D, BatchNormalization, Dropout, MaxPooling2D, ZeroPadding2D, \
-    concatenate, Conv2DTranspose
-from tensorflow.python.keras.activations import relu
-from tensorflow.python.keras import Model
 
 base_model = tf.keras.applications.MobileNetV2(
     input_shape=[128, 128, 3], include_top=False

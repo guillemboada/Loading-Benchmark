@@ -1,3 +1,7 @@
+""" 
+This file contains the methods to create a TensorFlow dataset using .flow_from_directory()
+"""
+
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import tensorflow as tf
 from IPython.display import clear_output
