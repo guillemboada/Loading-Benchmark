@@ -11,25 +11,28 @@ config.read('parameters.ini')
 HEIGHT = int(config['DEFAULT']['height'])
 WIDTH = int(config['DEFAULT']['width'])
 
-
 def get_data_paths(path):
     images_paths = glob(os.path.join(path, "images/*"))
     masks_paths = glob(os.path.join(path, "masks/*"))
 
     return images_paths, masks_paths
 
-def read_image(path):
+def read_image(path, preprocess=True):
     x = cv2.imread(path, cv2.IMREAD_COLOR)
     x = cv2.resize(x, (WIDTH, HEIGHT))
-    x = x.astype(np.float32) / 255.
+    if preprocess:
+        x = x / 255.0
+        x = x.astype(np.float32)
 
     return x
-    
-def read_mask(path):
+
+def read_mask(path, preprocess=True):
     x = cv2.imread(path, cv2.IMREAD_GRAYSCALE)
     x = cv2.resize(x, (WIDTH, HEIGHT))
+    x -= 1
     x = np.expand_dims(x, axis=-1)
-    x = x.astype(np.float32) - 1
+    if preprocess:
+        x = x.astype(np.float32)
 
     return x
 
@@ -62,7 +65,7 @@ def parse_single_image_for_segmentation(image, mask):
 
   return out
 
-def dynamic_write_images_to_tfr(path, max_files, tfrecords_path, filename):
+def dynamic_write_images_to_tfr(path, max_files, tfrecords_path, filename, preprocess=True):
 
   images_paths, masks_paths = get_data_paths(path)
 
@@ -84,8 +87,8 @@ def dynamic_write_images_to_tfr(path, max_files, tfrecords_path, filename):
       index = i*splits+current_shard_count
       if index == N: #when we have consumed the whole data, preempt generation
         break
-      current_image = read_image(images_paths[index])
-      current_mask =  read_mask(masks_paths[index])
+      current_image = read_image(images_paths[index], preprocess)
+      current_mask =  read_mask(masks_paths[index], preprocess)
 
       #create the required Example representation
       out = parse_single_image_for_segmentation(image=current_image, mask=current_mask)
