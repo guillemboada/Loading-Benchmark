@@ -6,12 +6,12 @@ While it is possible to input your data to fit a model using a custom _generator
 * **c)** Using `.flow_from_directory()`
 * **d)** Using `.tfrecords`
 
-These are benchmarked on a segmentation task in `DatasetLoadingBenchmark.ipynb`.
+These are benchmarked on a segmentation task in `DatasetLoadingBenchmark.ipynb`, where the best approaches are discussed. 
 
 ## References
 To execute the benchmarking on your machine, you will need to:
 * Create a virtual environment from `requirements.txt`. This is easily managed executing `pip install -r requirements.txt` on the terminal.
-* Install the packages required for GPU computing. Given the tensorflow 2.4.0, these are CUDA 11.0 and cuDNN 8.0 (more combinations [here](https://www.tensorflow.org/install/source#gpu)).
+* Install the packages required for GPU computing. Note that the code has only been tested with tensorflow 2.4.0, which works with CUDA 11.0 and cuDNN 8.0. For more combinations, check the [link](https://www.tensorflow.org/install/source#gpu).
 * Start a W&B container to log memory usage during training. A quickstart tutorial can be found [here](https://docs.wandb.ai/quickstart).
 
 Please write me if you have any question understanding the code (guillemboada@hotmail.com).
