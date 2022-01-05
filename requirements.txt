@@ -100,3 +100,4 @@ wincertstore==0.2
 wrapt==1.12.1
 yaspin==2.1.0
 zipp==3.6.0
+tensorflow-datasets==4.4.0
