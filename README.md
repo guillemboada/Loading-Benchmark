@@ -12,7 +12,7 @@ These are benchmarked on a segmentation task in `LoadingBenchmark.ipynb`.
   <img src="https://github.com/guillemboada/Loading-Benchmark/blob/main/TrainingTimes.png" alt="TrainingTimes" width="800"/>
 </p>
 
-## References
+## Prerequisites
 To execute the benchmarking on your machine, you will need to:
 * Create a virtual environment from `requirements.txt`. This is easily managed executing `pip install -r requirements.txt` on the terminal.
 * Install the packages required for GPU computing. Note that the code has only been tested with tensorflow 2.4.0, which works with CUDA 11.0 and cuDNN 8.0. For more combinations, check the [link](https://www.tensorflow.org/install/source#gpu).
